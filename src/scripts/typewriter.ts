@@ -4,5 +4,5 @@ document.addEventListener('DOMContentLoaded', () => {
     loop: false,
     autoStart: true
   });
-  tw.typeString('prodageek.com').start();
+  tw.typeString('agileprodigy.com').start();
 });
