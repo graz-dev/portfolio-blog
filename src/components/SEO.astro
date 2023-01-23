@@ -10,22 +10,22 @@ export interface Props {
   slug?: string;
 }
 
-const DOMAIN = 'https://aleksa.codes';
-const DEFAULT_OG_IMAGE = 'https://aleksa.codes/assets/aleksa-codes-og.png';
+const DOMAIN = 'https://agileprodigy.com';
+const DEFAULT_OG_IMAGE = '';
 const {
-  title = 'aleksa.codes',
+  title = 'agileprodigy.com',
   description = "As a junior React developer, Aleksa is skilled in building user interfaces and front-end applications using the popular JavaScript library. Passionate about coding and dedicated to creating visually appealing and user-friendly experiences, Aleksa is constantly seeking to improve and expand their skills. Explore Aleksa's (or Alexa's) portfolio to see their work and learn more about their capabilities as a web developer.",
-  siteName = 'aleksa.codes',
+  siteName = 'agileprodigy.com',
   canonical = DOMAIN,
   ogImage = DEFAULT_OG_IMAGE,
   ogType = 'website',
-  twitterHandle = '@aleksacodes',
+  twitterHandle = '@grazdev_',
   slug = undefined
 } = Astro.props as Props;
 ---
 
 {
-  title === 'aleksa.codes' ? (
+  title === 'agileprodigy.com' ? (
     <title>{`${siteName}`}</title>
   ) : (
     <title>{`${title} | ${siteName}`}</title>
@@ -46,8 +46,8 @@ const {
 
 <meta
   name='title'
-  content={title === 'aleksa.codes'
-    ? 'aleksa.codes | Web Developer'
+  content={title === 'agileprodigy.com'
+    ? 'agileprodigy.com | Product Owner'
     : `${title} | ${siteName}`}
 />
 <meta name='description' content={description} />
@@ -56,7 +56,7 @@ const {
 <meta property='og:url' content={canonical} />
 <meta
   property='og:title'
-  content={title === 'aleksa.codes'
+  content={title === 'agileprodigy.com'
     ? 'Portfolio & Blog'
     : `${title} | ${siteName}`}
 />
@@ -69,14 +69,14 @@ const {
   property='og:image:alt'
   content={slug !== undefined
     ? title + 'Social Image'
-    : 'Aleksa Codes Social Image'}
+    : 'Agile Prodigy Social Image'}
 />
 
 <meta property='twitter:card' content='summary_large_image' />
 <meta property='twitter:url' content={canonical} />
 <meta
   property='twitter:title'
-  content={title === 'aleksa.codes'
+  content={title === 'agileprodigy.com'
     ? 'Portfolio & Blog'
     : `${title} | ${siteName}`}
 />
@@ -90,7 +90,7 @@ const {
   property='twitter:image:alt'
   content={slug !== undefined
     ? title + 'Social Image'
-    : 'Aleksa Codes Social Image'}
+    : 'Agile Prodigy Social Image'}
 />
 
 <link rel='canonical' href={canonical ?? DOMAIN} />
