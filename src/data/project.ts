@@ -1,4 +1,4 @@
-export const projects = [
+/*export const projects = [
   {
     name: '',
     desc: '',
@@ -7,4 +7,4 @@ export const projects = [
     demo: '',
     img: ''
   }
-];
+];*/
