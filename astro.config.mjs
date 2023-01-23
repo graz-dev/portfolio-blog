@@ -6,7 +6,7 @@ import image from '@astrojs/image';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://agileprodigy.com',
+  site: 'https://casto-graziano.me',
   markdown: {
     syntaxHighlight: 'shiki',
     shikiConfig: {

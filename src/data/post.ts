@@ -42,9 +42,9 @@ export function published(posts: MarkdownInstance[]): Post[] {
 export function getRSS(posts: MarkdownInstance[]) {
   return {
     stylesheet: '/rss/styles.xsl',
-    title: 'Blog Posts (from agileprodigy.com)',
+    title: 'Blog Posts (from casto-graziano.me)',
     description:
-      'Step into the world of Agile Product Management Mastery with AgileProdigy.com - Get a glimpse of the latest trends, best practices and actionable insights in every blog post',
+      'Step into the world of Agile Product Management Mastery - Get a glimpse of the latest trends, best practices and actionable insights in every blog post',
     site: import.meta.env.SITE,
     customData: `<language>en-us</language>`,
     items: published(posts).map((post: Post) => ({

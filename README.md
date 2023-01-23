@@ -18,7 +18,7 @@ I've also added service worker to pass PWA check as well, just for fun, so it is
 
 ## Demo
 
-Demo for this project is available @ [aleksa.codes](https://aleksa.codes)
+Demo for this project is available @ [casto-graziano.me](https://casto-graziano.me)
 
 ## 🚀 Project Structure
 

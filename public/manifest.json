@@ -1,9 +1,9 @@
 {
-  "name": "aleksa.codes",
-  "short_name": "aleksa.codes",
+  "name": "casto-graziano.me",
+  "short_name": "casto-graziano.me",
   "display": "standalone",
   "orientation": "portrait",
-  "description": "Aleksa's personal website",
+  "description": "Graziano's personal website",
   "theme_color": "#463aa1",
   "background_color": "#463aa1",
   "scope": "/",
@@ -11,7 +11,7 @@
   "icons": [
     {
       "src": "/icons/maskable_icon.png",
-      "sizes": "1024x1024",
+      "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
     },

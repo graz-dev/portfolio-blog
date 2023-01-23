@@ -4,5 +4,5 @@ document.addEventListener('DOMContentLoaded', () => {
     loop: false,
     autoStart: true
   });
-  tw.typeString('agileprodigy.com').start();
+  tw.typeString('Casto Graziano').start();
 });

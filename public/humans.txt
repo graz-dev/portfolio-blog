@@ -1,7 +1,7 @@
-## Aleksa.codes ##
+## casto-graziano.me ##
 
-All development & Content by Aleksa
+All development & Content by Graziano Casto
 
-- email: aleksacodes@outlook.com
-- website: www.aleksa.codes
-- github: github.com/aleksa-codes
+- email: graziano.casto@outlook.com
+- website: www.casto-graziano.me
+- github: github.com/graz-dev
