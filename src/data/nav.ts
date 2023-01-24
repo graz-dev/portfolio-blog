@@ -12,6 +12,10 @@ export const navItems = [
     label: 'Blog'
   },
   {
+    href: '/resume',
+    label: 'Resume'
+  },
+  {
     href: '/contact',
     label: 'Contact'
   }
