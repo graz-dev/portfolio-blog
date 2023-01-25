@@ -1,42 +1,54 @@
 ---
-import Layout from '../components/layouts/Layout.astro';
+import Layout from "../components/layouts/Layout.astro";
 ---
 
 <Layout
-  title='About'
+  title="About"
   description="Learn more about Graziano, a Product Owner with a strong background as Software Engineer and QA Test Manager experienced building software product for Retail Industry and Guiding Teams achieving company goals."
 >
   <h1>About me</h1>
-  <p>
-    I'm <span
-    class='highlight'>Graziano Casto</span
-  >, a young Italian man with a passion for technology and product management. 
-    I've always been driven to learn and grow, and that's what led me to pursue a career in the tech industry. 
-    </p>
-  <p>
-    I started working as a software engineer right after high school as <span
-    class='highlight'>QA Test Manager</span
-  > and quickly moved up to a <span
-  class='highlight'>Software Engineer</span
-> role. 
-    Currently, I work as a <span
-    class='highlight'>Product Owner</span
-  > and I bring my passion for agile culture and product management to the forefront. 
-  I have experience building software products for the <span
-  class='highlight'>Retail Industry</span
-> and   
-  I'm currently studying <span
-    class='highlight'>Computer Science at POLIMI</span
-  > to improve my skills and knowledge in the field. 
-  </p>
-  <p>
-    I'm dedicated to making a real impact in the industry and I invite you to take a look at my portfolio to see some of my work and my ambition. 
-    Also, don't forget to check my blog where I share my thoughts and experiences in the tech industry and feel free to contact me for any inquiries or collaboration opportunities.
-  </p>
-  <p
-    style="font-family: 'Segoe Script', cursive;"
-    class='text-3xl sm:text-4xl text-right font-bold select-none px-4 xs:px-8'
-  >
-    Graziano C.
-  </p>
+  <div class="flex flex-col items-center justify-center h-full">
+    <div
+      class="mt-[-24px] mb-4 flex flex-col sm:flex-row items-start justify-center sm:items-center gap-4 w-full"
+    >
+      <div class="flex flex-row items-center justify-center w-full xs:w-1/2">
+        <img src="/assets/me-avatar.png" alt="me_avatar" />
+      </div>
+      <p class="w-full">
+        I'm <span class="highlight">Graziano Casto</span>, a young Italian man
+        with a passion for technology and product management. I've always been
+        driven to learn and grow, and that's what led me to pursue a career in
+        the tech industry. <br />
+        I started working as a software engineer right after high school as <span
+          class="highlight">QA Test Manager</span
+        > and quickly moved up to a <span class="highlight"
+          >Software Engineer</span
+        > role.
+      </p>
+    </div>
+    <div>
+      <p>
+        Currently, I work as a <span class="highlight">Product Owner</span> and I
+        bring my passion for agile culture and product management to the forefront.
+        I have experience building software products for the <span
+          class="highlight">Retail Industry</span
+        > and I'm studying <span class="highlight"
+          >Computer Science at POLIMI</span
+        > to improve my skills and knowledge in the field.
+      </p>
+      <p>
+        I'm dedicated to making a real impact in the industry and I invite you
+        to take a look at my portfolio to see some of my work and my ambition.
+        Also, don't forget to check my blog where I share my thoughts and
+        experiences in the tech industry and feel free to contact me for any
+        inquiries or collaboration opportunities.
+      </p>
+      <p
+        style="font-family: 'Segoe Script', cursive;"
+        class="text-3xl sm:text-4xl text-right font-bold select-none px-4 xs:px-8"
+      >
+        Graziano C.
+      </p>
+    </div>
+  </div>
 </Layout>
