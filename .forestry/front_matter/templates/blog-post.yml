@@ -33,3 +33,5 @@ fields:
     min: 
     max: 
   label: categories
+pages:
+- src/posts/agile-scrum-differences.mdx
