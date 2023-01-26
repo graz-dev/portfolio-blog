@@ -33,7 +33,7 @@ export function published(posts: MarkdownInstance[]): Post[] {
     .filter(
       (post) =>
         post.frontmatter.title &&
-        (MODE === 'development' || !post.frontmatter.draft)
+        (!post.frontmatter.draft)
     )
     .map(single)
     .sort((a, b) => b.timestamp - a.timestamp);
