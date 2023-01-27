@@ -1,16 +1,16 @@
 ---
-import '../../styles/global.css';
-import '@fontsource/poppins';
-import '@fontsource/poppins/400-italic.css';
-import '@fontsource/poppins/500.css';
-import '@fontsource/poppins/500-italic.css';
-import '@fontsource/poppins/600.css';
-import '@fontsource/poppins/600-italic.css';
-import '@fontsource/poppins/700.css';
-import '@fontsource/poppins/800.css';
-import SEO from '../SEO.astro';
-import Footer from '../Footer.astro';
-import Navbar from '../Navbar.astro';
+import "../../styles/global.css";
+import "@fontsource/poppins";
+import "@fontsource/poppins/400-italic.css";
+import "@fontsource/poppins/500.css";
+import "@fontsource/poppins/500-italic.css";
+import "@fontsource/poppins/600.css";
+import "@fontsource/poppins/600-italic.css";
+import "@fontsource/poppins/700.css";
+import "@fontsource/poppins/800.css";
+import SEO from "../SEO.astro";
+import Footer from "../Footer.astro";
+import Navbar from "../Navbar.astro";
 
 export interface Props {
   title?: string;
@@ -26,25 +26,25 @@ export interface Props {
 const {
   title,
   description,
-  siteName = 'casto-graziano.me',
+  siteName = "casto-graziano.me",
   canonical,
   ogImage,
   ogType,
   twitterHandle,
-  slug
+  slug,
 } = Astro.props as Props;
 ---
 
-<html lang='en' class=''>
+<html lang="en" class="">
   <head>
     <script
       is:inline
-      src='https://cdn.jsdelivr.net/npm/theme-change@2.2.0/index.js'
+      src="https://cdn.jsdelivr.net/npm/theme-change@2.2.0/index.js"
     ></script>
     <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js');
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/sw.js");
         });
       }
     </script>
@@ -54,18 +54,18 @@ const {
   </head>
 
   <body
-    style='visibility: hidden;'
-    class='flex flex-col items-center min-h-screen antialiased overflow-x-hidden overflow-y-scroll'
+    style="visibility: hidden;"
+    class="flex flex-col items-center min-h-screen antialiased overflow-x-hidden overflow-y-scroll"
   >
-    <div class='snow'></div>
+    <div class="snow"></div>
     <!-- some weird fix for mozilla firefox fouc -->
     <script>
       0;
     </script>
-    <div class='flex-grow w-full max-w-3xl'>
+    <div class="flex-grow w-full max-w-3xl">
       <Navbar />
-      <div class='px-4 pt-4 md:pt-8'>
-        <div class='min-w-full prose lg:prose-lg animate-content-fade'>
+      <div class="px-4 pt-4 md:pt-8">
+        <div class="min-w-full prose lg:prose-lg animate-content-fade">
           <slot />
         </div>
       </div>
@@ -75,13 +75,13 @@ const {
     <script>
       // Helper function
       let domReady = (cb: any) => {
-        document.readyState === 'interactive'
+        document.readyState === "interactive"
           ? cb()
-          : window.addEventListener('DOMContentLoaded', cb);
+          : window.addEventListener("DOMContentLoaded", cb);
       };
       domReady(() => {
         // Display body when DOM is loaded
-        document.body.style.visibility = 'visible';
+        document.body.style.visibility = "visible";
       });
     </script>
     <!-- <script src='../../scripts/snow.ts'></script> -->
@@ -118,18 +118,17 @@ const {
       }
     </script>-->
     <!-- Buy me a coffee -->
-    <!--<script
-      is:inline
-      data-name='BMC-Widget'
-      data-cfasync='false'
-      src='https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js'
-      data-id='casto-graziano.me'
-      data-description='Support me on Buy me a coffee!'
-      data-message='Made with 💻 and ☕'
-      data-color='#fb923c'
-      data-position='Right'
-      data-x_margin='8'
-      data-y_margin='8'
-    ></script>-->
+    <script
+      data-name="BMC-Widget"
+      data-cfasync="false"
+      src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+      data-id="grazianocaE"
+      data-description="Support me on Buy me a coffee!"
+      data-message="Support me on Buy me a coffee!"
+      data-color="#BD5FFF"
+      data-position="Right"
+      data-x_margin="18"
+      data-y_margin="18"
+    ></script>
   </body>
 </html>

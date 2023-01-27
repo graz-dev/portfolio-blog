@@ -1,52 +1,82 @@
 ---
-import Layout from '../components/layouts/Layout.astro';
+import Layout from "../components/layouts/Layout.astro";
 ---
 
 <Layout>
-  <div class='flex flex-row items-center justify-start mb-4 md:mb-8'>
-    <span
-      id='typed'
-      class='text-4xl font-extrabold lg:text-5xl text-base-content'
-      >Hello Everyone</span
-    >
-    <span class='not-prose ml-3 animate-waving-hand'>
-      <img
-        src='/assets/waving-hand.webp'
-        alt='waving hand'
-        class='w-12 h-12'
-        srcset='
-          /assets/waving-hand.webp 1x,
-          /assets/waving-hand.webp 2x
-        '
-      />
-    </span>
+  <div>
+    <h1 class="mb-[-48px] lg:mb-[-48px]">
+      I'm <span
+        class="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-base-content to-indigo-500 dark:from-base-content dark:to-indigo-300"
+        >Graziano Casto</span
+      ><br /><span
+        style="font-size: 0.6em;"
+        class="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-base-content to-indigo-500 dark:from-base-content dark:to-indigo-300"
+      >
+        Your friendly neighborhood <span
+          style="color: #c7d2fe;"
+          class="highlight-heading animate-box-shadow dark:animate-winter-box-shadow"
+          id="typed-short-description"
+        >
+        </span>
+      </span>
+    </h1>
   </div>
-  <h1 class='mb-[-48px] lg:mb-[-48px]'>
-    I'm <span
-      class='font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-base-content to-indigo-500 dark:from-base-content dark:to-indigo-300'
-      >Graziano Casto</span
+
+  <div class="flex flex-col items-center justify-center h-full">
+    <div
+      class="mt-[-24px] mb-4 flex flex-col sm:flex-row items-start justify-center sm:items-center gap-4 w-full"
     >
-  </h1>
-  <h2>
-    Creating{' '}
-    <span
-      class='highlight-heading animate-box-shadow dark:animate-winter-box-shadow'
-      >successful products</span
-    >
-    and{' '}
-    <span
-      class='highlight-heading animate-box-shadow dark:animate-winter-box-shadow'
-      >guiding teams</span> to deliver them: that's what I do as a{' '}
-    <span
-      class='highlight-heading animate-box-shadow dark:animate-winter-box-shadow'
-      >Product Owner.</span
-    >
-  </h2>
-  <div class='text-xl font-semibold'>
-    Guide teams to deliver successful products: that's my expertise as Product Owner with 4 years of experience in the software industry. My passion for Agile Culture and Software Craftsmanship, combined with my diverse background in test management and software engineering, gives me a unique perspective to drive product development. Let's achieve your goals together, check out my blog for more insights.  </div>
-  <div
-    class='w-[275px] h-[275px] sm:w-[350px] sm:h-[350px] md:w-[450px] md:h-[450px] mx-auto mt-4 bg-laptop'
-  >
-    <!-- Laptop image here -->
+      <div class="flex flex-row items-center justify-center w-full xs:w-1/2">
+        <img src="/assets/home.png" alt="me_avatar" />
+      </div>
+      <h3 style="margin-left: 0.1em;" class="w-full">
+        Bringing{" "}
+        <span
+          class="highlight-heading animate-box-shadow dark:animate-winter-box-shadow"
+          >products</span
+        >
+        to life, leading{" "}
+        <span
+          class="highlight-heading animate-box-shadow dark:animate-winter-box-shadow"
+          >teams</span
+        > to success - that's what drives me. Let's turn your ideas into reality!
+      </h3>
+    </div>
+    <div class="text-xl font-semibold">
+      Leading teams to product success: that's my expertise! With four years in
+      the software industry and a passion for Agile and Software Craftsmanship,
+      my diverse background in test management and software engineering gives me
+      a unique perspective to drive product development. Check out my blog to
+      unlock the secret for succes in product management!
+    </div>
   </div>
+
+  <!-- <div class="flex flex-col items-center justify-center h-full">
+    <h3
+      class="text-transparent bg-clip-text bg-gradient-to-r from-base-content to-indigo-500 dark:from-base-content dark:to-indigo-300"
+    >
+      Latest Blog Posts
+    </h3>
+  </div> -->
 </Layout>
+<script>
+  import Typewriter from "typewriter-effect/dist/core";
+  document.addEventListener("DOMContentLoaded", () => {
+    const tw = new Typewriter(
+      document.querySelector("#typed-short-description"),
+      {
+        loop: true,
+        autoStart: true,
+      }
+    );
+    tw.typeString("Product Owner")
+      .pauseFor(2000)
+      .deleteChars(13)
+      .typeString("Software Engineer")
+      .pauseFor(2000)
+      .deleteChars(17)
+      .typeString("Author")
+      .pauseFor(2000)
+      .start();
+  });
+</script>
