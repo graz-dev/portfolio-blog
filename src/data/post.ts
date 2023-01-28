@@ -14,6 +14,7 @@ export type Post = {
   img: string;
   imgWidth: number;
   imgHeight: number;
+  categories: string[];
 };
 
 export function single(post: MarkdownInstance): Post {

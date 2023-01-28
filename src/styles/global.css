@@ -190,3 +190,10 @@ body {
   opacity: 0.5;
   display: none;
 }
+
+.chip {
+  padding: 0.5em;
+  border-radius: 18px;
+  margin-right: 8px;
+}
+

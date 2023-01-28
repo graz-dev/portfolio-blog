@@ -35,6 +35,25 @@ const post: Post = Astro.props.post;
     <div
       class="flex flex-row items-center justify-center gap-2 pt-2 text-sm sm:justify-start"
     >
+      <ul
+        style="padding-left: 0em; text-align: center; font-size: small; margin-top: 0em; margin-bottom: 0em;"
+        class="hidden p-0 menu menu-horizontal md:flex"
+      >
+        {
+          post.categories.map((cat: any) => (
+            <li
+              style="text-align: inherit; font-size: small; margin-right: 0.2em;"
+              class="chip  bg-gradient-to-r from-indigo-500  to-indigo-500 dark:from-indigo-200 dark:to-indigo-200 rounded-md"
+            >
+              {cat}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div
+      class="flex flex-row items-center justify-center gap-2 pt-2 text-sm sm:justify-start"
+    >
       <span>
         <Date date={post.date} />
       </span>

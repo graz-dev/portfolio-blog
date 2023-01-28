@@ -1,9 +1,10 @@
 ---
-import { published } from '../../data/post';
-import PostCard from '../../components/PostCard.astro';
-import Layout from '../../components/layouts/Layout.astro';
+import { published } from "../../data/post";
+import PostCard from "../../components/PostCard.astro";
+import Layout from "../../components/layouts/Layout.astro";
+import { AstroComponentInstance } from "astro/dist/runtime/server";
 export async function getStaticPaths({ paginate }: any) {
-  const markdownFiles = await Astro.glob('../../posts/*.mdx');
+  const markdownFiles = await Astro.glob("../../posts/*.mdx");
   const posts = published(markdownFiles);
   return paginate(posts, { pageSize: 4 });
 }
@@ -12,27 +13,27 @@ const { page } = Astro.props;
 ---
 
 <Layout
-  title='Blog'
+  title="Blog"
   description="Learn from the inside out: A software engineer and test manager's take on product ownership. Check out my latest blog post now!"
 >
   <h1>Blog</h1>
   <div>
     {page.data.map((post: any) => <PostCard post={post} />)}
   </div>
-  <div class='flex flex-row justify-center font-semibold mt-4'>
+  <div class="flex flex-row justify-center font-semibold mt-4">
     Page {page.currentPage} / {page.lastPage}
   </div>
-  <div class='btn-group grid grid-cols-2 w-2/3 sm:w-1/2 mx-auto mt-4'>
+  <div class="btn-group grid grid-cols-2 w-2/3 sm:w-1/2 mx-auto mt-4">
     <a
       href={page.url.prev}
-      class={`btn btn-outline ${page.url.prev ? '' : 'btn-disabled'}`}
+      class={`btn btn-outline ${page.url.prev ? "" : "btn-disabled"}`}
     >
       Previous
     </a>
 
     <a
       href={page.url.next}
-      class={`btn btn-outline ${page.url.next ? '' : 'btn-disabled'}`}
+      class={`btn btn-outline ${page.url.next ? "" : "btn-disabled"}`}
     >
       Next
     </a>
