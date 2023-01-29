@@ -4,7 +4,7 @@ import { published } from "../data/post";
 import PostCard from "../components/PostCard.astro";
 
 const markdownFiles = await Astro.glob("../posts/*.mdx");
-const posts = published(markdownFiles).filter(p => p.featured);
+const posts = published(markdownFiles).filter((p) => p.featured);
 ---
 
 <Layout>
@@ -60,8 +60,20 @@ const posts = published(markdownFiles).filter(p => p.featured);
     >
       Featured Blog Posts
     </h2>
-    <div style="font-size: medium;">
-      {posts.map((post: any) => <PostCard post={post} />)}
+    <div id="carousel" style="font-size: medium; transition: all 0.3s ease;">
+      {
+        posts.map((post: any, i: any) => (
+          <PostCard
+            dataId = {i}
+            classStyle={(i == 0) ? `flex flex-col items-center sm:pb-8 sm:flex-row-reverse sm:gap-10` : `flex flex-col items-center sm:pb-8 sm:flex-row-reverse sm:gap-10 hidden`}
+            post={post}
+          />
+        ))
+      }
+    </div>
+    <div class="btn-group grid grid-cols-2 w-2/3 sm:w-1/2 mx-auto mt-4">
+      <div id="prev-btn" class="btn btn-outline">&lt;</div>
+      <div id="next-btn" class="btn btn-outline">&gt;</div>
     </div>
   </div>
 </Layout>
@@ -85,4 +97,46 @@ const posts = published(markdownFiles).filter(p => p.featured);
       .pauseFor(2000)
       .start();
   });
+</script>
+<script>
+  const prev = document.querySelector("#prev-btn");
+  const next = document.querySelector("#next-btn");
+  const items = document.querySelector("#carousel")?.children;
+  
+  const totalItems = items?.length;
+  console.log(totalItems)
+  let index = 0;
+  prev.classList.add("btn-disabled");
+
+  prev?.addEventListener("click", () => {
+    nextItem("prev");
+  });
+
+  next?.addEventListener("click", () => {
+    nextItem("next");
+  });
+
+  function nextItem(direction: any) {
+    if (direction == "next") {
+      items[index].classList.add("hidden");
+      if (index == totalItems -1) {
+        items[0].classList.remove("hidden");
+        index = 0;
+      }else{
+        items[index + 1].classList.remove("hidden");
+        prev.classList.remove("btn-disabled");
+        index++;
+      }
+    } else {
+      items[index].classList.add("hidden");
+      items[(index == 0) ? (totalItems - 1) : (index - 1)].classList.remove("hidden");
+      if (index != 0) {
+        index--;
+      }else{
+        index = totalItems - 1;
+      }
+    }    
+  }
+
+  setInterval(nextItem, 5000);
 </script>

@@ -40,7 +40,15 @@ const { page } = Astro.props;
   </div>
   <hr />
   <div>
-    {page.data.map((post: any) => <PostCard post={post} />)}
+    {
+      page.data.map((post: any, i: any) => (
+        <PostCard
+          dataId={i}
+          classStyle="flex flex-col items-center sm:pb-8 sm:flex-row-reverse sm:gap-10"
+          post={post}
+        />
+      ))
+    }
   </div>
   <div class="flex flex-row justify-center font-semibold mt-4">
     Page {page.currentPage} / {page.lastPage}

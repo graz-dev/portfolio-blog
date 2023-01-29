@@ -4,10 +4,13 @@ import { Image } from "@astrojs/image/components";
 import Date from "./utilities/Date.astro";
 import ReadTime from "./utilities/ReadTime.astro";
 const post: Post = Astro.props.post;
+const dataId: number = Astro.props.dataId;
+const classStyle: string = Astro.props.classStyle;
 ---
 
 <div
-  class="flex flex-col items-center sm:pb-8 sm:flex-row-reverse sm:gap-10"
+  id={(dataId !== null || dataId !== undefined) ? `item-${dataId}`  : `item-nan`}
+  class={classStyle} 
   style="border-block: initial;"
 >
   {
