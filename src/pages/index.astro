@@ -64,8 +64,12 @@ const posts = published(markdownFiles).filter((p) => p.featured);
       {
         posts.map((post: any, i: any) => (
           <PostCard
-            dataId = {i}
-            classStyle={(i == 0) ? `flex flex-col items-center sm:pb-8 sm:flex-row-reverse sm:gap-10` : `flex flex-col items-center sm:pb-8 sm:flex-row-reverse sm:gap-10 hidden`}
+            dataId={i}
+            classStyle={
+              i == 0
+                ? `flex flex-col items-center sm:pb-8 sm:flex-row-reverse sm:gap-10`
+                : `flex flex-col items-center sm:pb-8 sm:flex-row-reverse sm:gap-10 hidden`
+            }
             post={post}
           />
         ))
@@ -102,41 +106,42 @@ const posts = published(markdownFiles).filter((p) => p.featured);
   const prev = document.querySelector("#prev-btn");
   const next = document.querySelector("#next-btn");
   const items = document.querySelector("#carousel")?.children;
-  
+
   const totalItems = items?.length;
-  console.log(totalItems)
+  console.log(totalItems);
   let index = 0;
+  const autoRollFeatured = setInterval(nextItem, 5000);
   prev.classList.add("btn-disabled");
 
   prev?.addEventListener("click", () => {
     nextItem("prev");
+    clearInterval(autoRollFeatured);
   });
 
   next?.addEventListener("click", () => {
     nextItem("next");
+    clearInterval(autoRollFeatured);
   });
 
   function nextItem(direction: any) {
     if (direction == "next") {
       items[index].classList.add("hidden");
-      if (index == totalItems -1) {
+      if (index == totalItems - 1) {
         items[0].classList.remove("hidden");
         index = 0;
-      }else{
+      } else {
         items[index + 1].classList.remove("hidden");
         prev.classList.remove("btn-disabled");
         index++;
       }
     } else {
       items[index].classList.add("hidden");
-      items[(index == 0) ? (totalItems - 1) : (index - 1)].classList.remove("hidden");
+      items[index == 0 ? totalItems - 1 : index - 1].classList.remove("hidden");
       if (index != 0) {
         index--;
-      }else{
+      } else {
         index = totalItems - 1;
       }
-    }    
+    }
   }
-
-  setInterval(nextItem, 5000);
 </script>
