@@ -2,7 +2,6 @@
 import { published } from "../../data/post";
 import PostCard from "../../components/PostCard.astro";
 import Layout from "../../components/layouts/Layout.astro";
-import { AstroComponentInstance } from "astro/dist/runtime/server";
 export async function getStaticPaths({ paginate }: any) {
   const markdownFiles = await Astro.glob("../../posts/*.mdx");
   const posts = published(markdownFiles);
@@ -17,6 +16,29 @@ const { page } = Astro.props;
   description="Learn from the inside out: A software engineer and test manager's take on product ownership. Check out my latest blog post now!"
 >
   <h1>Blog</h1>
+  <div
+    class="mt-[-24px] mb-4 flex flex-col sm:flex-row items-start justify-center sm:items-center gap-4 w-full"
+  >
+    <div class="flex flex-row items-center justify-center w-full xs:w-1/2">
+      <img src="/assets/blog.png" alt="me_avatar" />
+    </div>
+    <p class="w-full">
+      Welcome to the ultimate destination for tech professionals looking to
+      level up their skills in <span class="highlight">product management</span
+      >, <span class="highlight">leadership</span>, <span class="highlight"
+        >agile methodologies</span
+      >, and <span class="highlight">software engineering</span>. This blog is
+      packed with actionable <span class="highlight">tips</span>, <span
+        class="highlight">insights</span
+      >, and <span class="highlight">real-world examples</span> to help you become
+      a top performer in your field. Whether you're a <span class="highlight"
+        >product manager</span
+      >, a <span class="highlight">software engineer</span>, or a <span
+        class="highlight">leader</span
+      >, you can find something for you.
+    </p>
+  </div>
+  <hr />
   <div>
     {page.data.map((post: any) => <PostCard post={post} />)}
   </div>
