@@ -103,24 +103,21 @@ const posts = published(markdownFiles).filter((p) => p.featured);
   });
 </script>
 <script>
-  const prev = document.querySelector("#prev-btn");
-  const next = document.querySelector("#next-btn");
-  const items = document.querySelector("#carousel")?.children;
+  const prev: any = document.querySelector("#prev-btn");
+  const next: any = document.querySelector("#next-btn");
+  const items: any = document.querySelector("#carousel")?.children;
 
   const totalItems = items?.length;
   console.log(totalItems);
   let index = 0;
-  const autoRollFeatured = setInterval(nextItem, 5000);
   prev.classList.add("btn-disabled");
 
   prev?.addEventListener("click", () => {
     nextItem("prev");
-    clearInterval(autoRollFeatured);
   });
 
   next?.addEventListener("click", () => {
     nextItem("next");
-    clearInterval(autoRollFeatured);
   });
 
   function nextItem(direction: any) {
